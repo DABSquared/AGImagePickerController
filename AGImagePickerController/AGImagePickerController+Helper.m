@@ -189,7 +189,7 @@
 
 - (CGPoint)itemTopLeftPoint
 {
-    CGRect bounds = [[UIScreen mainScreen] bounds];
+    CGRect bounds = [self.view bounds];
     CGFloat width = bounds.size.width;
     
     if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
