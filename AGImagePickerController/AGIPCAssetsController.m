@@ -265,7 +265,7 @@
     [self.assets removeAllObjects];
     
     [self.assetsGroup enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
-        
+        if (!result) return;
         AGIPCGridItem *gridItem = [[AGIPCGridItem alloc] initWithImagePickerController:self.imagePickerController asset:result andDelegate:self];
         if ( self.imagePickerController.selection != nil &&
             [self.imagePickerController.selection containsObject:result])
