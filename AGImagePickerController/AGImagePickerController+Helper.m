@@ -51,28 +51,7 @@
 - (NSUInteger)defaultNumberOfItemsPerRow
 {
     NSUInteger numberOfItemsPerRow = 0;
-    
-    if (IS_IPAD())
-    {
-        if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation))
-        {
-            numberOfItemsPerRow = AGIPC_ITEMS_PER_ROW_IPAD_PORTRAIT;
-        } else
-        {
-            numberOfItemsPerRow = AGIPC_ITEMS_PER_ROW_IPAD_LANDSCAPE;
-        }
-    } else
-    {
-        if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation))
-        {
-            numberOfItemsPerRow = AGIPC_ITEMS_PER_ROW_IPHONE_PORTRAIT;
-            
-        } else
-        {
-            numberOfItemsPerRow = AGIPC_ITEMS_PER_ROW_IPHONE_LANDSCAPE;
-        }
-    }
-    
+    numberOfItemsPerRow =  self.view.bounds.size.width/(AGIPC_ITEM_WIDTH+5);
     return numberOfItemsPerRow;
 }
 
